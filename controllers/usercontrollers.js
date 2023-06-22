@@ -38,12 +38,13 @@ export const register=async(req,res)=>{
 
 
 
-export const detect =async(req,res)=>{
+export const detect = async(req,res) =>{
     try{
-        const axios = require('axios');
 
 const encodedParams = new URLSearchParams();
 encodedParams.set('q', 'English is hard, but detectably so');
+
+console.log("hii google")
 
 const options = {
   method: 'POST',
@@ -96,7 +97,7 @@ const options = {
 
 export const translate=async(req,res)=>{
     try{
-        const axios = require('axios');
+        // const axios = require('axios');
 
 const encodedParams = new URLSearchParams();
 encodedParams.set('q', 'Hello, world!');
