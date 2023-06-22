@@ -44,15 +44,13 @@ export const detect = async(req,res) =>{
 const encodedParams = new URLSearchParams();
 encodedParams.set('q', 'English is hard, but detectably so');
 
-console.log("hii google")
-
 const options = {
   method: 'POST',
   url: 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect',
   headers: {
     'content-type': 'application/x-www-form-urlencoded',
     'Accept-Encoding': 'application/gzip',
-    'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+    'X-RapidAPI-Key': '58d475b4bamsh62ee03188629888p166db1jsn30912dec66dc',
     'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
   },
   data: encodedParams,
@@ -73,17 +71,16 @@ const options = {
 
 export const languages =async(req,res)=>{
     try{
-        const axios = require('axios');
 
-const options = {
-  method: 'GET',
-  url: 'https://google-translate1.p.rapidapi.com/language/translate/v2/languages',
-  headers: {
-    'Accept-Encoding': 'application/gzip',
-    'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-  }
-};
+        const options = {
+          method: 'GET',
+          url: 'https://google-translate1.p.rapidapi.com/language/translate/v2/languages',
+          headers: {
+            'Accept-Encoding': 'application/gzip',
+            'X-RapidAPI-Key': '58d475b4bamsh62ee03188629888p166db1jsn30912dec66dc',
+            'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+          }
+        };
 
 	const response = await axios.request(options);
 	res.send(response.data);
@@ -99,23 +96,22 @@ export const translate=async(req,res)=>{
     try{
         // const axios = require('axios');
 
-const encodedParams = new URLSearchParams();
-encodedParams.set('q', 'Hello, world!');
-encodedParams.set('target', 'es');
-encodedParams.set('source', 'en');
-
-const options = {
-  method: 'POST',
-  url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
-  headers: {
-    'content-type': 'application/x-www-form-urlencoded',
-    'Accept-Encoding': 'application/gzip',
-    'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-  },
-  data: encodedParams,
-};
-
+        const encodedParams = new URLSearchParams();
+        encodedParams.set('q', ' asmaan');
+        encodedParams.set('target', 'es');
+        encodedParams.set('source', 'en');
+        
+        const options = {
+          method: 'POST',
+          url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'Accept-Encoding': 'application/gzip',
+            'X-RapidAPI-Key': '58d475b4bamsh62ee03188629888p166db1jsn30912dec66dc',
+            'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+          },
+          data: encodedParams,
+        };
 	const response = await axios.request(options);
 	res.send(response.data);
 
