@@ -7,20 +7,20 @@ export const register=async(req,res)=>{
 
         const {name,email,password}=req.body;
 
-        if(!name)return res.send("name is required")
-        if(!email)return res.send("email is required")
-        if(!password)return res.send("password is required")
+        if(!name)return res.send("name is required");
+        if(!email)return res.send("email is required");
+        if(!password)return res.send("password is required");
 
 
          const response=await User.find({email}).exec();
 
-         if(!response.length) return res.send("email is already exits");
+         if(response.length) return res.send("email is already exits");
 
          const secretkey="pin";
          const encryptkey=encrypt.encrypt(password,secretkey,256);
 
 
-         const user=new User({
+         const user= new User({
             name,
             email,
             password:encryptkey
